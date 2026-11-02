@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as CommandeRouteImport } from './routes/commande'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EnsemblesRouteImport } from './routes/ensembles'
+import { Route as NouveautesRouteImport } from './routes/nouveautes'
+import { Route as PanierRouteImport } from './routes/panier'
+import { Route as ProduitIdRouteImport } from './routes/produit.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsRoute = CollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommandeRoute = CommandeRouteImport.update({
+  id: '/commande',
+  path: '/commande',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnsemblesRoute = EnsemblesRouteImport.update({
+  id: '/ensembles',
+  path: '/ensembles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NouveautesRoute = NouveautesRouteImport.update({
+  id: '/nouveautes',
+  path: '/nouveautes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanierRoute = PanierRouteImport.update({
+  id: '/panier',
+  path: '/panier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduitIdRoute = ProduitIdRouteImport.update({
+  id: '/produit/$id',
+  path: '/produit/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/collections': typeof CollectionsRoute
+  '/commande': typeof CommandeRoute
+  '/contact': typeof ContactRoute
+  '/ensembles': typeof EnsemblesRoute
+  '/nouveautes': typeof NouveautesRoute
+  '/panier': typeof PanierRoute
+  '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/collections': typeof CollectionsRoute
+  '/commande': typeof CommandeRoute
+  '/contact': typeof ContactRoute
+  '/ensembles': typeof EnsemblesRoute
+  '/nouveautes': typeof NouveautesRoute
+  '/panier': typeof PanierRoute
+  '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/collections': typeof CollectionsRoute
+  '/commande': typeof CommandeRoute
+  '/contact': typeof ContactRoute
+  '/ensembles': typeof EnsemblesRoute
+  '/nouveautes': typeof NouveautesRoute
+  '/panier': typeof PanierRoute
+  '/produit/$id': typeof ProduitIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/collections'
+    | '/commande'
+    | '/contact'
+    | '/ensembles'
+    | '/nouveautes'
+    | '/panier'
+    | '/produit/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/collections'
+    | '/commande'
+    | '/contact'
+    | '/ensembles'
+    | '/nouveautes'
+    | '/panier'
+    | '/produit/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/collections'
+    | '/commande'
+    | '/contact'
+    | '/ensembles'
+    | '/nouveautes'
+    | '/panier'
+    | '/produit/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  CollectionsRoute: typeof CollectionsRoute
+  CommandeRoute: typeof CommandeRoute
+  ContactRoute: typeof ContactRoute
+  EnsemblesRoute: typeof EnsemblesRoute
+  NouveautesRoute: typeof NouveautesRoute
+  PanierRoute: typeof PanierRoute
+  ProduitIdRoute: typeof ProduitIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections': {
+      id: '/collections'
+      path: '/collections'
+      fullPath: '/collections'
+      preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commande': {
+      id: '/commande'
+      path: '/commande'
+      fullPath: '/commande'
+      preLoaderRoute: typeof CommandeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ensembles': {
+      id: '/ensembles'
+      path: '/ensembles'
+      fullPath: '/ensembles'
+      preLoaderRoute: typeof EnsemblesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nouveautes': {
+      id: '/nouveautes'
+      path: '/nouveautes'
+      fullPath: '/nouveautes'
+      preLoaderRoute: typeof NouveautesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panier': {
+      id: '/panier'
+      path: '/panier'
+      fullPath: '/panier'
+      preLoaderRoute: typeof PanierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produit/$id': {
+      id: '/produit/$id'
+      path: '/produit/$id'
+      fullPath: '/produit/$id'
+      preLoaderRoute: typeof ProduitIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  CollectionsRoute: CollectionsRoute,
+  CommandeRoute: CommandeRoute,
+  ContactRoute: ContactRoute,
+  EnsemblesRoute: EnsemblesRoute,
+  NouveautesRoute: NouveautesRoute,
+  PanierRoute: PanierRoute,
+  ProduitIdRoute: ProduitIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
